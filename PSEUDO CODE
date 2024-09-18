@@ -1,0 +1,49 @@
+// Load and Filter Geospatial Data
+Load Sentinel-2 image collection
+Filter images by date (Jan 1, 2023 - Apr 30, 2023)
+Filter images by Hyderabad region
+Compute median of images
+
+// Pre-process Imagery
+Select bands B2, B3, B4, B8
+Calculate NDVI using bands B8 and B4
+Add NDVI band to the image
+
+// Display the Image
+Define display parameters (min, max, bands for RGB)
+Add image layer to the map with defined parameters
+
+// Load and Merge Training Data
+Merge Water, Forest, and Urban datasets
+
+// Extract Features for Training
+Sample regions from the image using the training data
+Extract spectral bands and labels from training data
+
+// Split Data into Training and Testing Sets
+Add a random column to the sampled data
+Split data into training set (80%) and test set (20%)
+
+// Train Random Forest Classifier
+Initialize Random Forest classifier with parameters
+Train classifier using the training set (bands, labels)
+
+// Classify the Entire Image
+Classify the full image using the trained classifier
+
+// Display Classified Result
+Center map on Hyderabad
+Add classified image layer to the map with color palette
+
+// Evaluate Classifier Performance
+Print classifier explanation
+Calculate and print confusion matrix for training data
+Calculate and print overall accuracy for training set
+
+// Validate Classifier
+Classify the test set
+Calculate and print confusion matrix for validation
+Calculate and print overall accuracy for test set
+
+// Export Training Data
+Export training data to a shapefile
